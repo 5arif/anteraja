@@ -1,0 +1,124 @@
+﻿@page
+@model IndexModel
+
+@section Scripts {
+    <script src="~/js/home.js"></script>
+}
+
+
+<div class="row">
+    <div class="col-6">
+        <h4>Daftar Paket</h4>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-primary btn-sm float-right" id="btn-add">
+            <i class="bi-plus-circle-dotted mr-1"></i> Tambah
+        </button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="table-responsive">
+        <table class="table table-sm table-hover" id="package_table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama Paket</th>
+                    <th scope="col">Lebar</th>
+                    <th scope="col">Tinggi</th>
+                    <th scope="col">Berat</th>
+                    <th scope="col">Nama Pengirim</th>
+                    <th scope="col">Alamat Pengirim</th>
+                    <th scope="col">Penerima Paket</th>
+                    <th scope="col">Alamat Penerima</th>
+                    <th scope="col">
+                        <i class="bi-list"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="modal fade" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="packageModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="packageModalLabel">Detail Paket</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="data-id" />
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nama Paket :</label>
+                                <input type="text" class="form-control" id="package_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Lebar :</label>
+                                <input type="text" class="form-control" id="package_width">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Tinggi :</label>
+                                <input type="text" class="form-control" id="package_heigth">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Berat :</label>
+                                <input type="text" class="form-control" id="package_weight">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Alamat Pengirim :</label>
+                                <textarea type="text" class="form-control" id="sender_address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Nama Pengirim :</label>
+                                <input type="text" class="form-control" id="sender_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Penerima Paket :</label>
+                                <input type="text" class="form-control" id="package_recipient">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Alamat Penerima :</label>
+                                <textarea type="text" class="form-control" id="recipient_address"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary btn-sm">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirm_dialog" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Konfirmasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="confirm_content">Confirm Content</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Ya</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+      </div>
+    </div>
+  </div>
+</div>

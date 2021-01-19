@@ -1,0 +1,20 @@
+﻿.table-sm td, .table-sm th {
+    font-size: 12px;
+}
+
+.red{
+    color : red;
+}
+
+.form-control {
+    height: 28px;
+    font-size: 12px
+}
+
+label.col-form-label{
+    font-size:12px;
+}
+
+.form-group{
+    margin-bottom : 0;
+}
